@@ -72,6 +72,8 @@
     <Compile Include="Assets\_Complete-Game\Scripts\Done_RandomRotator.cs" />
     <Compile Include="Assets\_Complete-Game\Scripts\Done_WeaponController.cs" />
     <Compile Include="Assets\_Complete-Game\Scripts\mainSceneService.cs" />
+    <Compile Include="Assets\_Complete-Game\Scripts\SimpleTouchAreaButton.cs" />
+    <Compile Include="Assets\_Complete-Game\Scripts\SimpleTouchPad.cs" />
     <Compile Include="Assets\Lobby\Scripts\DraggablePanel.cs" />
     <Compile Include="Assets\Lobby\Scripts\EventSystemChecker.cs" />
     <Compile Include="Assets\Lobby\Scripts\Lobby\LobbyCountdownPanel.cs" />
