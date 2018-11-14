@@ -102,6 +102,7 @@ public class Done_GameController : MonoBehaviour
     //  public Text restartText;
     public Text gameOverText;
     public GameObject restartButton;
+    public GameObject returnButton;
 
     private bool gameOver;
     //  private bool restart;
@@ -110,25 +111,13 @@ public class Done_GameController : MonoBehaviour
     void Start()
     {
         gameOver = false;
-        //      restart = false;
-        //      restartText.text = "";
         gameOverText.text = "";
         restartButton.SetActive(false);
+        returnButton.SetActive(false);
         score = 0;
         UpdateScore();
         StartCoroutine(SpawnWaves());
     }
-
-    //  void Update ()
-    //  {
-    //      if (restart)
-    //      {
-    //          if (Input.GetKeyDown (KeyCode.R))
-    //          {
-    //              Application.LoadLevel (Application.loadedLevel);
-    //          }
-    //      }
-    //  }
 
     IEnumerator SpawnWaves()
     {
@@ -148,8 +137,7 @@ public class Done_GameController : MonoBehaviour
             if (gameOver)
             {
                 restartButton.SetActive(true);
-                //              restartText.text = "Press 'R' for Restart";
-                //              restart = true;
+                returnButton.SetActive(true);
                 break;
             }
         }
@@ -168,7 +156,7 @@ public class Done_GameController : MonoBehaviour
 
     public void GameOver()
     {
-        gameOverText.text = "Perdu champion!";
+        gameOverText.text = "Vous avez perdu!";
         gameOver = true;
     }
 
@@ -181,4 +169,5 @@ public class Done_GameController : MonoBehaviour
     {
         SceneManager.LoadScene(level);
     }
+
 }
