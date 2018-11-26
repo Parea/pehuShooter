@@ -99,6 +99,7 @@ public class Done_GameController : MonoBehaviour
     public float waveWait;
 
     public Text scoreText;
+    public Text heartText;
     //  public Text restartText;
     public Text gameOverText;
     public GameObject restartButton;
@@ -107,6 +108,7 @@ public class Done_GameController : MonoBehaviour
     private bool gameOver;
     //  private bool restart;
     private int score;
+    public int heart;
 
     void Start()
     {
@@ -115,7 +117,9 @@ public class Done_GameController : MonoBehaviour
         restartButton.SetActive(false);
         returnButton.SetActive(false);
         score = 0;
+        heart = 5;
         UpdateScore();
+        UpdateHeart();
         StartCoroutine(SpawnWaves());
     }
 
@@ -148,16 +152,27 @@ public class Done_GameController : MonoBehaviour
         score += newScoreValue;
         UpdateScore();
     }
-
+    
     void UpdateScore()
     {
         scoreText.text = "Score: " + score;
     }
 
+    public void RemoveHeart(int newHeartValue)
+    {
+        heart -= newHeartValue;
+        UpdateHeart();
+    }
+
+    void UpdateHeart()
+    {
+        heartText.text = "Heart: " + heart;
+    }
+
     public void GameOver()
     {
-        gameOverText.text = "Vous avez perdu!";
-        gameOver = true;
+            gameOverText.text = "Vous avez perdu!";
+            gameOver = true;
     }
 
     public void RestartGame()
